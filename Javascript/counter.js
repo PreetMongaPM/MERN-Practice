@@ -47,3 +47,5 @@ reset.onclick = (e)=>{
     cnt2.textContent = `0`;
     multiply.textContent = `X : 0`;
 }
+
+//Email changed
