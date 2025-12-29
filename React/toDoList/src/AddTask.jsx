@@ -1,8 +1,9 @@
 function AddTask(){
     return (
-    <div>
-        <input type="text" placeholder="Add the task" />
-        <button>Add</button>
+    <div className="add-container">
+        <input class="taskEnter field" type="text" placeholder="Enter your task"/>
+        <input className="taskEnter field" type="date"/>
+        <input class="taskEnter  field btn btn-primary" type="button" value="Add"/>
     </div>);
 }
 

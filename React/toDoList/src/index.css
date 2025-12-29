@@ -1,0 +1,26 @@
+.main{
+    width: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.grid-container{
+    display: flexbox;
+    flex-direction: row;
+}
+
+.add-container{
+    display: grid;
+    grid-template-columns: 0.8fr 0.4fr 0.2fr;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.taskEnter{
+    border-radius: 20px;
+    padding: 10px;
+}
+
+.field{
+    box-shadow: 1px 2px 2px black;
+
+}
