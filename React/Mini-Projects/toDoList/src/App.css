@@ -1,0 +1,32 @@
+.app-name{
+    font-weight: 600;
+    margin: 10px;
+}
+
+input{
+    width: 100%;
+}
+
+.items-container{
+    text-align: left;
+}
+
+
+button{
+    min-width: 80px;
+    text-align: left;
+}
+
+.pm-row{
+    margin: 10px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
