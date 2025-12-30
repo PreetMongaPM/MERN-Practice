@@ -1,4 +1,4 @@
-function AddTask() {
+function InputRow() {
   return (
     <div class="container">
       <div class="row pm-row">
@@ -17,4 +17,4 @@ function AddTask() {
   );
 }
 
-export default AddTask;
+export default InputRow;

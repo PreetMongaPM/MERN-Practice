@@ -6,14 +6,25 @@
 //   </>
 // }
 
-export default function App() {
+// import React from "react";
+import BestGamesList from "./components/BestGamesList/BestGamesList";
+import ErrorMessage from "./components/ErrorMessage/ErrorMessage"
+// import
+//let games = ["Valorant", "GTA V", "COD MW"];
+let games = [];
+
+
+function App() {
   return (
-    <div>
-      <h1>Hello, world!</h1>
-      <h2>It is {}.</h2>
-    </div>
+    <>
+      <h1>Best Games</h1>
+      <ErrorMessage games={games}/>
+      <BestGamesList games={games}/>
+    </>
   );
 }
+
+export default App;
 
 
 
