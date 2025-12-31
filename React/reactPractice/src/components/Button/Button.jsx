@@ -1,5 +1,10 @@
-import './button.css'
-const clicked = false;
-export default function Button(){
-    return <button className="button">Please Donate!</button>
+import "./Button.css";
+
+export default function Button({game, handleOnClick }) {
+  
+  return (
+    <button className="button" onClick={handleOnClick}>
+      Vote
+    </button>
+  );
 }

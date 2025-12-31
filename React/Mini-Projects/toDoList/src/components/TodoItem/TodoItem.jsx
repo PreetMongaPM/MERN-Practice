@@ -1,10 +1,11 @@
+import css from "./TodoItem.module.css"
 
 function TodoItem({todoItem, dueDate}){
     return (
         <div class="container">
-        <div class="row pm-row">
-          <div class="col-6">${todoItem}</div>
-          <div class="col-4">${dueDate}</div>
+        <div class={`row ${css["pm-row"]}`}>
+          <div class="col-6">{todoItem}</div>
+          <div class="col-4">{dueDate}</div>
           <div class="col-2">
             <button type="button" class="btn btn-danger">
               Delete
@@ -13,7 +14,6 @@ function TodoItem({todoItem, dueDate}){
         </div>
       </div>
     );
-
 }
 
 export default TodoItem;
