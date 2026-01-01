@@ -2,7 +2,7 @@
 
 import BestGamesListItem from "./BestGamesListItem";
 
-function BestGamesList({ games, onKeyDown }) {
+function BestGamesList({ games, onKeyDown}) {
   return (
     <>
       <ul className="list-group">

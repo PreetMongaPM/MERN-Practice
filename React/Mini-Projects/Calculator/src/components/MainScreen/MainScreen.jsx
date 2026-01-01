@@ -1,9 +1,9 @@
 
 import css from "./MainScreen.module.css";
-const MainScreen = ()=>{
+const MainScreen = ({mainScreen})=>{
 
     return <>
-    <input className={css.calcDisplay}type="text" readOnly />
+    <input className={css.calcDisplay}type="text" readOnly value={mainScreen}/>
     </>
 }
 

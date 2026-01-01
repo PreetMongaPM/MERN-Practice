@@ -13,17 +13,24 @@ import BestGamesList from "./components/BestGamesList/BestGamesList";
 import ErrorMessage from "./components/ErrorMessage/ErrorMessage"
 import Container from "./components/Container/Container";
 import { useEffect, useState } from "react";
-let games = ["Valorant", "GTA V", "COD MW"];
-// let games = [];
 
-const handleOnKeyDown = (event)=>{
-  
-  let [gameName, setGameName] = useState(games);
-  console.log(event.target.value);
-}
-
-
+let gamename = ["valo"];
 function App() {
+  let [games, setGameName] = useState(gamename);
+  const handleOnKeyDown = (event)=>{
+     if(event.key === "Enter" && event.target.value.length !== 0)
+      {
+        console.log(event);
+        let newGames = [...games, event.target.value];
+        event.target.value = "";
+        setGameName(newGames);
+      }
+  }
+
+  // const handleOnMouseEnter = ()=>{ //Aise nhi karna chaiye, agar module use kar rhe hai toh use it properly
+  //   setMouseEnterClass("mouseEnterClass");
+  //   console.log(mouseEnterClass);
+  // }
   return (
     <>
     <Container>
