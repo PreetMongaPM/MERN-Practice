@@ -25,6 +25,7 @@ const keys = [
 
 const App = () => {
   let [mainScreen, setMainScreen] = useState("0");
+  
   const handleOnClick = (event)=>{
     let buttonPressed = event.target.innerHTML;
     let newValue;
@@ -50,6 +51,7 @@ const App = () => {
           }
         setMainScreen(newValue);
     }
+    
   }
 
   return (

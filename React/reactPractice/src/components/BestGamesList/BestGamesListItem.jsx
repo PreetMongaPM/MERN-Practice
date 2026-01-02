@@ -1,19 +1,20 @@
-import { useState } from "react";
+// import { useState } from "react";
 import Button from "../Button/Button";
-import css from "./BestGamesListItem.module.css";
+// import css from "./BestGamesListItem.module.css";
 
-function BestGamesListItem({ game, onKeyDown}) {
-  let [mouseEnterClass, setMouseEnterClass] = useState('');
-  const handleOnMouseEnter = ()=>{
-    setMouseEnterClass(css.onMouseEnter)
-  }
-  const handleOnMouseLeave = ()=>{
-    setMouseEnterClass('');
-  }
+function BestGamesListItem({ game, bought, handleOnClick}) {
+  // let [mouseEnterClass, setMouseEnterClass] = useState('');
+  // const handleOnMouseEnter = ()=>{
+  //   setMouseEnterClass(css.onMouseEnter)
+  // }
+  // const handleOnMouseLeave = ()=>{
+  //   setMouseEnterClass('');
+  // }
+
   return (
-    <li className={`list-group-item ${mouseEnterClass}`}>
+    <li className={`list-group-item ${bought && 'active'}`}>
       {game}
-      <Button onKeyDown={onKeyDown} handleOnMouseLeave={handleOnMouseLeave} handleOnMouseEnter={handleOnMouseEnter} />
+      <Button handleOnClick={handleOnClick}/>
     </li>
   );
 }

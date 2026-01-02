@@ -1,9 +1,9 @@
 import "./Button.css";
 
-export default function Button({handleOnClick,handleOnMouseEnter, handleOnMouseLeave }) {
+export default function Button({handleOnClick}) {
   
   return (
-    <button className="button" onClick={handleOnClick} onMouseEnter={handleOnMouseEnter} onMouseLeave={handleOnMouseLeave} >
+    <button className="button" onClick={handleOnClick} >
       Vote
     </button>
   );
