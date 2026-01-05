@@ -1,0 +1,12 @@
+input{
+    width: 100%;
+}
+
+button{
+    min-width: 80px;
+}
+
+.pm-row{
+    margin: 10px;
+    text-align: left;
+}
