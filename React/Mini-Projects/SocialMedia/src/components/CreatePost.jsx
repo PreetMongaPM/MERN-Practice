@@ -1,4 +1,5 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { postList } from "../store/post-list-context";
 
 const CreatePost = ({handleOnSubmit}) => {
     const postTitle = useRef('');
@@ -8,12 +9,13 @@ const CreatePost = ({handleOnSubmit}) => {
     const onFormSubmit = (event)=>{
         event.preventDefault();
         handleOnSubmit({postTitle, postCaption, postHashtag})
-        // console.log(postTitle, postCaption, postHashtag);
-    }
 
+      }
+    const {showPosts} = useContext(postList);
 
                          
     return (
+    <>{showPosts === 'CREATE POST' && 
     <form onSubmit={onFormSubmit}>
       <label htmlFor="imageUpload">Upload Image:</label>
       <br />
@@ -34,7 +36,8 @@ const CreatePost = ({handleOnSubmit}) => {
       <br />
       <button >Upload</button>
       <br />
-    </form>
+    </form>}
+  </>
   );
 };
 
