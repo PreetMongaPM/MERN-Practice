@@ -1,7 +1,7 @@
 import { IoIosHeartEmpty } from "react-icons/io";
 import { FaEye } from "react-icons/fa";
 
-const Card = ({ post }) => {
+const Card = ({post}) => {
   return (
     <div class="card" style={{ width: "18rem" }}>
       <img
@@ -12,19 +12,21 @@ const Card = ({ post }) => {
       <div class="card-body">
         <h5 class="card-title">{post.title}</h5>
         <p class="card-text">{post.body}</p>
-        {post.tags.map((tag) => {
+        {/* {post.tags.map((tag) => {
           <span key={post.id} class="badge rounded-pill text-bg-primary">
             {tag}
           </span>;
-        })}
+        })} */}
+        
         {/* //This is for Like icon */}
         <button type="button" class="btn btn-primary">
-          <IoIosHeartEmpty /> <span class="badge text-bg-secondary">{post.reactions.likes}</span>
+          <IoIosHeartEmpty />{" "}
+          {/* <span class="badge text-bg-secondary">{post.reactions.likes}</span> */}
         </button>
 
-        {/* //This is for viess count */}
+        {/* //This is for views count */}
         <button type="button" class="btn btn-primary">
-          <FaEye/> <span class="badge text-bg-secondary">4</span>
+          <FaEye /> <span class="badge text-bg-secondary">4</span>
         </button>
       </div>
     </div>

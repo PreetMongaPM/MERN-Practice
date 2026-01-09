@@ -1,4 +1,4 @@
-import {useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { createContext } from "react";
 
 export const postList = createContext({
@@ -13,29 +13,35 @@ const PostListProvider = ({ children }) => {
   const [showPosts, setShowPosts] = useState("HOME");
   const [posts, setPosts] = useState([]);
 
-//   const handleOnSubmit = ({ postTitle, postCaption, postHashtag }) => {
-//     setPosts((currentPosts) => [
-//       ...currentPosts,
-//       {
-//         postTitle: postTitle.current.value,
-//         postCaption: postCaption.current.value,
-//         postHashtag: postHashtag.current.value,
-//       },
-//     ]);
-//     setShowPosts('HOME');
-//   };
+  const addOnSubmit = (post) => {
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        title: "I am in love with someone.",
+        userId: 5,
+        /* other post data */
+      }),
+    })
+      .then((res) => res.json())
+      .then((resObj) => {
+        console.log('Post Created');
+        console.log(resObj);
+        setPosts((currentPosts) => [ resObj, ...currentPosts]);
+        setShowPosts("HOME");
+      });
+  };
 
-  const addOnSubmit = ()=>{
+  const deleteOnClick = () => {};
 
-  }
-  const deleteOnClick = ()=>{
-
-  }
-  
-   const fetchingImages = useEffect(() => {
+  useEffect(() => {
     fetch("https://dummyjson.com/posts")
       .then((res) => res.json())
       .then((obj) => setPosts(obj.posts));
+
+    return () => {
+      console.log("went out");
+    };
   }, []);
 
   return (
