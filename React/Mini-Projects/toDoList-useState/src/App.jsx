@@ -5,49 +5,49 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import { useState } from "react";
 
+export const api = "xyz";
+
 //Passing an array of objects - having two fields todoItem and dueDate
-function App() { 
+function App() {
   const [todoItems, setTodoItems] = useState([]);
 
   const formatDateToDDMMYYYY = (isoDate) => {
-  if (!isoDate) return "";
-  const [year, month, day] = isoDate.split("-");
-  return `${day}/${month}/${year}`;
-};
+    if (!isoDate) return "";
+    const [year, month, day] = isoDate.split("-");
+    return `${day}/${month}/${year}`;
+  };
 
-  const addTaskOnClick =({todoItem, dueDate})=>{
+  const addTaskOnClick = ({ todoItem, dueDate }) => {
     // console.log(todoItem, dueDate)
-    if(todoItem.length !== 0 && dueDate.length !== 0)
-    {
+    if (todoItem.length !== 0 && dueDate.length !== 0) {
       dueDate = formatDateToDDMMYYYY(dueDate);
       // let newTodoItems = [...todoItems, {todoItem, dueDate}];
       // setTodoItems(newTodoItems)
-      setTodoItems((currentVal)=>[...currentVal, {todoItem, dueDate}])  //This is a functional way to setState 
-                                                                        //to avoid any inconsistency among state
-    }
-    else if(todoItem.length === 0)
-    {
+      setTodoItems((currentVal) => [...currentVal, { todoItem, dueDate }]); //This is a functional way to setState
+      //to avoid any inconsistency among state
+    } else if (todoItem.length === 0) {
       alert("To do Item can't be empty");
-    }
-    else{
+    } else {
       alert("Date cannot be empty");
     }
-  }
+  };
 
-  const handleDeleteOnCLick = (index)=>
-  {
-    let newTodoItems = todoItems.filter((item, itemIndex) =>{
+  const handleDeleteOnCLick = (index) => {
+    let newTodoItems = todoItems.filter((item, itemIndex) => {
       return index !== itemIndex;
     });
 
     setTodoItems(newTodoItems);
-  }
+  };
 
   return (
     <center className="main-container">
       <AppName />
-      <InputRow addTaskOnClick={addTaskOnClick}/>
-      <TodoItems todoItems={todoItems} handleDeleteOnCLick={handleDeleteOnCLick}/>
+      <InputRow addTaskOnClick={addTaskOnClick} />
+      <TodoItems
+        todoItems={todoItems}
+        handleDeleteOnCLick={handleDeleteOnCLick}
+      />
     </center>
   );
 }

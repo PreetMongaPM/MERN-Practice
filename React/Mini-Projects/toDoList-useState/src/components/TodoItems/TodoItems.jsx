@@ -1,11 +1,20 @@
 import TodoItem from "../TodoItem/TodoItem";
 
+export const api = "xyz";
+
 const TodoItems = ({ todoItems, handleDeleteOnCLick }) => {
   //gets an object which is an array of objects
   return (
     <>
       {todoItems.map((item, index) => {
-        return <TodoItem index={index} todoItem={item.todoItem} dueDate={item.dueDate} handleDeleteOnCLick={handleDeleteOnCLick}/>;
+        return (
+          <TodoItem
+            index={index}
+            todoItem={item.todoItem}
+            dueDate={item.dueDate}
+            handleDeleteOnCLick={handleDeleteOnCLick}
+          />
+        );
       })}
     </>
   );
