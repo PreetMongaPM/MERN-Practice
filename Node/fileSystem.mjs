@@ -2,7 +2,7 @@
 import fs from "fs";
 
 async function readFile(filePath) {
-  try {
+  try { 
     const data = await fs.promises.readFile(filePath);
     console.log(data.toString());
   } catch (error) {
