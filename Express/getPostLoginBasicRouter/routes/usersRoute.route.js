@@ -1,19 +1,11 @@
 import { Router } from "express";
+import { createUser } from "../controllers/createUser.controller.js";
+import { getUser } from "../controllers/getUser.controller.js";
 
 const router = new Router();
 
+router.get('/',getUser);
 
-router.get('/',(req, res)=>{
-    res.json({user:'Preet Monga', age:'22'});
-});
-
-router.get('/',(req, res)=>{
-    res.json({user:'Preet Monga', age:'22'});
-});
-
-router.post('/', (req, res)=>{
-    res.send('User created');
-})
-
+router.post('/', createUser);
 
 export default router;
